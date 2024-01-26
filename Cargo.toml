@@ -1,29 +1,29 @@
 [package]
-name = "leptos-struct-table"
-version = "0.6.0"
-edition = "2021"
-authors = ["Marc-Stefan Cassola"]
-categories = ["gui", "web-programming"]
-description = "Generate a complete batteries included leptos data table component from a struct definition."
-exclude = ["examples/", "tests/"]
-keywords = ["leptos", "table", "data-sheet", "data-grid"]
-license = "MIT OR Apache-2.0"
-readme = "README.md"
-repository = "https://github.com/Synphonyte/leptos-struct-table"
+  authors = ["Marc-Stefan Cassola"]
+  categories = ["gui", "web-programming"]
+  description = "Generate a complete batteries included leptos data table component from a struct definition."
+  edition = "2021"
+  exclude = ["examples/", "tests/"]
+  keywords = ["data-grid", "data-sheet", "leptos", "table"]
+  license = "MIT OR Apache-2.0"
+  name = "leptos-struct-table"
+  readme = "README.md"
+  repository = "https://github.com/Synphonyte/leptos-struct-table"
+  version = "0.6.0"
 
 [dependencies]
-leptos = { version = "0.5", features = ["nightly"] }
-leptos-struct-table-macro = "0.8"
-async-trait = "0.1"
-paste = { version = "1.0", optional = true }
-chrono = { version = "0.4", optional = true, features = ["serde"] }
-serde = "1"
-uuid = { version = "1", optional = true, features = ["v4", "js", "serde"] }
-thiserror = "1"
+  async-trait = "0.1"
+  chrono = { version = "0.4", optional = true, features = ["serde"] }
+  leptos = { version = "0.6.0-rc1", features = ["nightly"] }
+  leptos-struct-table-macro = "0.8"
+  paste = { version = "1.0", optional = true }
+  serde = "1"
+  thiserror = "1"
+  uuid = { version = "1", optional = true, features = ["js", "serde", "v4"] }
 
 [features]
-chrono = ["dep:chrono", "dep:paste"]
-uuid = ["dep:uuid"]
+  chrono = ["dep:chrono", "dep:paste"]
+  uuid = ["dep:uuid"]
 
 [package.metadata."docs.rs"]
-all-features = true
+  all-features = true
